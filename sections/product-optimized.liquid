@@ -1,0 +1,45 @@
+<div class="product-container">
+  <div class="product-images">
+    {% render 'product-gallery' %}
+  </div>
+  
+  <div class="product-info">
+    {% render 'product-details' %}
+    {% render 'product-form' %}
+  </div>
+
+  <div class="product-description">
+    {% render 'product-tabs' %}
+  </div>
+
+  <div class="related-products">
+    {% render 'related-products' %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Section name",
+    "settings": []
+  }
+{% endschema %}
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "Product",
+  "name": "{{ product.title }}",
+  "image": "{{ product.featured_image | img_url: '1024x1024' }}",
+  "description": "{{ product.description | strip_html | escape }}",
+  "sku": "{{ product.selected_or_first_available_variant.sku }}",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "{{ shop.currency }}",
+    "price": "{{ product.price | divided_by: 100.00 }}",
+    "availability": "http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}",
+    "seller": {
+      "@type": "Organization",
+      "name": "{{ shop.name }}"
+    }
+  }
+}
+</script>

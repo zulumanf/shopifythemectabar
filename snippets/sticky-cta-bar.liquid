@@ -1,0 +1,12 @@
+<div class="sticky-cta-wrapper">
+  <div class="sticky-cta {% if template.name == 'product' %}product-cta{% else %}collection-cta{% endif %}">
+    <div class="sticky-cta-content">
+      <span class="sticky-cta-text">{{ settings.sticky_cta_text }}</span>
+      <div class="sticky-cta-small-text">
+        <span>{{ settings.sticky_cta_small_text_1 }}</span>
+        <span>{{ settings.sticky_cta_small_text_2 }}</span>
+      </div>
+      <button class="sticky-cta-button">{{ settings.sticky_cta_button_text }}</button>
+    </div>
+  </div>
+</div>

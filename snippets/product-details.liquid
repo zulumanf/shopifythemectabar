@@ -1,0 +1,6 @@
+<h1 class="product-title">{{ product.title }}</h1>
+<p class="product-price">{{ product.price | money }}</p>
+{% if product.compare_at_price > product.price %}
+  <p class="product-compare-price">{{ product.compare_at_price | money }}</p>
+{% endif %}
+<div class="product-vendor">{{ product.vendor }}</div>

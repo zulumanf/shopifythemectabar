@@ -1,0 +1,12 @@
+<div class="gallery-container">
+  <div class="main-image">
+    {{ product.featured_image | img_url: '1000x' | img_tag: product.title, 'product-featured-image', 'width:100%;height:auto;' }}
+  </div>
+  <div class="thumbnail-list">
+    {% for image in product.images %}
+      <div class="thumbnail">
+        {{ image | img_url: '150x' | img_tag: image.alt, 'thumbnail-image', 'width:100%;height:auto;' }}
+      </div>
+    {% endfor %}
+  </div>
+</div>

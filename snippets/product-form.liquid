@@ -1,0 +1,14 @@
+{% form 'product', product %}
+  <select name="id" id="product-select">
+    {% for variant in product.variants %}
+      <option value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
+    {% endfor %}
+  </select>
+  
+  <div class="quantity-selector">
+    <label for="quantity">Quantity</label>
+    <input type="number" id="quantity" name="quantity" value="1" min="1">
+  </div>
+  
+  <button type="submit" name="add" id="add-to-cart-button">Add to Cart</button>
+{% endform %}
