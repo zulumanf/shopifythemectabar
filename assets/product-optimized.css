@@ -1,0 +1,19 @@
+/* Add your custom styles here */
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-images,
+.product-info {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .product-images,
+  .product-info {
+    width: 50%;
+  }
+}
+
+/* Add more styles for other elements */
