@@ -1,0 +1,22 @@
+/* Custom cursor styling */
+.custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  z-index: 9999;
+  background-image: url("https://cdn.shopify.com/s/files/1/0873/2672/0287/files/wand_mouse.svg?v=1719434948");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: translate(-50%, -50%);
+}
+
+.custom-cursor.cursor-down {
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+/* Hide the default cursor */
+body,
+body * {
+  cursor: none !important;
+}

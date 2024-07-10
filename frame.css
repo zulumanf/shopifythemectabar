@@ -1,0 +1,84 @@
+body {
+  position: relative;
+  min-height: 100vh;
+  padding: 40px !important;
+  box-sizing: border-box;
+}
+
+.corner-frame {
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 9999;
+}
+
+.corner-top-left {
+  top: 0;
+  left: 0;
+  background-image: url('{{ "Top_Left_Corner.svg" | asset_url }}');
+}
+
+.corner-top-right {
+  top: 0;
+  right: 0;
+  background-image: url('{{ "Top_Right_Corner.svg" | asset_url }}');
+}
+
+.corner-bottom-left {
+  bottom: 0;
+  left: 0;
+  background-image: url('{{ "Bottom_Left_Corner.svg" | asset_url }}');
+}
+
+.corner-bottom-right {
+  bottom: 0;
+  right: 0;
+  background-image: url('{{ "Bottom_Right_Corner.svg" | asset_url }}');
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .corner-frame {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 20px !important;
+  }
+  .corner-frame {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px !important;
+  }
+  .corner-frame {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* Ensure content doesn't overlap with the frame */
+#MainContent {
+  padding: 40px;
+}
+
+@media (max-width: 768px) {
+  #MainContent {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  #MainContent {
+    padding: 10px;
+  }
+}
